@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 // Create Event
-// router.post('/', makeProduct);
+router.post('/', Controller.makeNewEvent);
 // Gets all Events
 router.get('/', Controller.getAllEvents);
 // Deletes Event by :id

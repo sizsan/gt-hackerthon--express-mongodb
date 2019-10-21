@@ -3,7 +3,7 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const port = 3000
-
+const eventsRouter = require('./routes/events_routes')
 const app = express()
 
 const dbConn = 'mongodb://localhost/event_planner'
@@ -18,13 +18,13 @@ mongoose.connect(dbConn, {
         if (err) {
             console.log('Error connecting to database', err);
         } else {
-            console.log('Connected to database!');
+            console.log('Connected to database!')
         }
     });
 
 app.use(cors())
 app.use(bodyParser.json())
-
+app.use('/events', eventsRouter);
 
 app.listen(port, () => {
 	console.log(`Event planner app listening on port ${port}`)

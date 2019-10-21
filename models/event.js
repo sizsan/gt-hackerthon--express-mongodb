@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Event = mongoose.model(new Schema({
+const Event = mongoose.model("Events", new Schema({
     name: {
         type: String,
         required: true
@@ -23,5 +23,9 @@ const Event = mongoose.model(new Schema({
 }));
 
 export const getAllEvents = () => {
-    Event.find()
+    return Event.find();
 }
+
+export const makeNewEvent = (req) => {
+    return new Event(req.body);
+};
