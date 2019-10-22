@@ -1,5 +1,5 @@
 import * as Events from '../models/event'
-
+// Creates a new Event
 export const makeNewEvent = function (req, res) {
     Events.makeNewEvent(req).save((err, post) => {
         if (err) {
@@ -53,7 +53,7 @@ export const removeEvent = function (req, res) {
         });
     }
 };
-
+// Updates Events
 export const changeEvent = function (req, res) {
     if (req.error) {
         res.status(req.error.status);

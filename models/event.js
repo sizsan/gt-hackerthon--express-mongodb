@@ -31,7 +31,7 @@ export const getAllEvents = () => {
 }
 // Gets an event by Category
 export const getEventsByCategory = (req) => {
-    return Event.find({category: req.body.category})
+    return Event.find({category: req.params.category})
 }
 
 export const removeEvent = (id) => {
