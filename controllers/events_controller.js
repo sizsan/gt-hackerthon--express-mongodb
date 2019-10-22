@@ -12,7 +12,7 @@ export const makeNewEvent = function (req, res) {
         res.send(post);
     });
 };
-
+// Gets a list of all events
 export const getAllEvents = function (req, res) {
     Events.getAllEvents(req).exec((err, events) => {
         if (err) {
@@ -24,7 +24,19 @@ export const getAllEvents = function (req, res) {
         res.send(events);
     });
 };
-
+// Gets Events By Category
+export const getEventsByCategory = function (req, res) {
+    Events.getEventsByCategory(req).exec((err, events) => {
+        if (err) {
+            res.status(500);
+            res.json({
+                error: err.message
+            });
+        }
+        res.send(events);
+    });
+};
+// Removes Event
 export const removeEvent = function (req, res) {
     if (req.error) {
         res.status(req.error.status);

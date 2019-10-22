@@ -15,10 +15,10 @@ router.put('/:id', Controller.changeEvent);
 // User Routes
 // Gets all Events
 router.get('/', Controller.getAllEvents);
-// Gets Event by id
-// router.get('/:id', Controller.getEventById);
+// Gets all Events from a category
+router.get('/:category', Controller.getEventsByCategory);
 // Gets all Events from a particular user
-// router.get('/:user', Controller.getAllEventsByUser);
+// router.get('/:user', Controller.getEventsByUser);
 
 
 
