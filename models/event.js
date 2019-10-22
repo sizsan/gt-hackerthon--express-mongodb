@@ -21,14 +21,18 @@ const Event = mongoose.model("Events", new Schema({
         enum: ['Halloween', 'Christmas', 'Easter', 'Birthday']
     }
 }));
-
-export const getAllEvents = () => {
-    return Event.find();
-}
-
+// Creates new event
 export const makeNewEvent = (req) => {
     return new Event(req.body);
 };
+// Gets a list of all events
+export const getAllEvents = () => {
+    return Event.find();
+}
+// Gets an event by Category
+export const getEventsByCategory = (req) => {
+    return Event.find({category: req.params.category})
+}
 
 export const removeEvent = (id) => {
     return Event.findByIdAndRemove(id);
