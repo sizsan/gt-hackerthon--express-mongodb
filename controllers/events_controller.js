@@ -25,3 +25,20 @@ export const getAllEvents = function (req, res) {
     });
 };
 
+export const removeEvent = function (req, res) {
+    if (req.error) {
+        res.status(req.error.status);
+        res.send(req.error.message);
+    } else {
+        Events.removeEvent(req.params.id).exec((err) => {
+            if (err) {
+                res.status(500);
+                res.json({
+                    error: err.message
+                });
+            }
+            res.sendStatus(204);
+        });
+    }
+};
+
