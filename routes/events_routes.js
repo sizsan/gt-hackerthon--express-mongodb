@@ -8,9 +8,9 @@ const router = express.Router();
 // Create Event
 router.post('/', Controller.makeNewEvent);
 // Deletes Event by :id
-// router.delete('/:id', removeEvent);
+router.delete('/:id', Controller.removeEvent);
 // Updates a Event by :id
-// router.put('/:id',changeProduct);
+router.put('/:id', Controller.changeEvent);
 
 // User Routes
 // Gets all Events

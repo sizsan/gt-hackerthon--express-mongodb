@@ -29,3 +29,13 @@ export const getAllEvents = () => {
 export const makeNewEvent = (req) => {
     return new Event(req.body);
 };
+
+export const removeEvent = (id) => {
+    return Event.findByIdAndRemove(id);
+};
+
+export const changeEvent = function (req) {
+    return Event.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    });
+};
