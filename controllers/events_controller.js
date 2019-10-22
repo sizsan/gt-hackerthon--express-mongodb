@@ -42,3 +42,21 @@ export const removeEvent = function (req, res) {
     }
 };
 
+export const changeEvent = function (req, res) {
+    if (req.error) {
+        res.status(req.error.status);
+        res.send(req.error.message);
+    } else {
+        Events.changeEvent(req).exec((err, post) => {
+            if (err) {
+                res.status(500);
+                res.json({
+                    error: err.message
+                });
+            }
+            res.status(200);
+            res.send(post);
+        });
+    }
+};
+
