@@ -21,10 +21,11 @@ export const getAllEvents = function (req, res) {
                 error: err.message
             });
         }
-        res.send(events);
+        res.render('index', {events: events});
     });
+    
 };
-// Gets Events By Category
+// Filters Events By Category
 export const getEventsByCategory = function (req, res) {
     Events.getEventsByCategory(req).exec((err, events) => {
         if (err) {
