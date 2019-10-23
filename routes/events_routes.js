@@ -6,7 +6,7 @@ const router = express.Router();
 // Admin Routes
 
 // Create Event
-router.post('/', Controller.makeNewEvent);
+router.post('/new', Controller.makeNewEvent);
 // Deletes Event by :id
 router.delete('/:id', Controller.removeEvent);
 // Updates a Event by :id
