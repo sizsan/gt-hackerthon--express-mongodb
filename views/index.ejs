@@ -8,9 +8,7 @@
     <title>Event Planner</title>
 </head>
 <body>
-    <section id="mainContainer">
-    <h1>Welcome</h1>
-    <h2>Current Events</h2>
+    <section id="header"><h1>Events Board</h1></section>
         <%console.log(events)%>
         <% for (let i = 0; i in events; i++){ %>
             <div class="event">
@@ -19,6 +17,5 @@
                 <%=(events[i].theme) ? events[i].theme : "No Theme"; %>
             </div>
         <%}%>
-    </section>
 </body>
 </html>
